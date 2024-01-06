@@ -1,0 +1,534 @@
+/* Cach lam hieu qua:
+1.Lam tu ngoai vao trong
+2.Tu tren xuong duoi
+3.Tong quan den chi tiet
+*/
+/* Truy cap web cua ban tu tbi ben ngoai: ngrok --> download ve or 000webhost */
+
+/* Cac the can biet trong css:
+1.text-tranform: viet hoa chu or thuong
+2.font-family
+3.list-style-type: bo dau cham dau cau trong ul
+4.display: inline-block --- hien thi duoi dang o block
+5.box-shadow: bong noi(ex: x, y, size, color (len w3 coi)
+6.float: right (chuyen ptu qua goc trai or phai quanh no)
+7.cursor: pointer (thay doi hinh dang con tro chuot)
+8.z-index: de chua loi fixed khi sd position
+9.font-weight: 300 (giam do day chu)
+10.letter-spacing: khoang cach giua cac chu
+11.font-style: doi kieu chu (vd: italic)
+12.opacity: (0--1.0) lam chu trong suot lai
+13.text-align: justify (can deu hai ben)
+14.<span>: la the dung de nhom cac phan tu lai vs nhau chu yeu sd cho vban
+15.scroll-behavior: smooth; : hanh dong cuon
+*/
+/* border-radius : tao goc cong 
+co the them margin am de the can doi vs nhau
+overflow: hidden : khac phuc loi khi sd float or use clear: both cho tien
+*/
+
+/*-Cach can giua o slider: tranform: translate, (right:0 and left:0), width: 100%
+- Căn giữa bằng flex: 
+    display: flex;
+    align-item: center;
+    justify-content: center;
+*/
+
+/* Modal:
+-for trong label chi dung dc cho id 
+-@keyframes (from {} to {}: tao effect chuyen dong (khi mo Buy Ticket)
+-animation: ModalFaceIN ease .5s; (hieu ung chuyen dong) */
+
+/* Themify icon (download ve) (or dung fontawesome) va xem icon tren web. SD the i de viet icon
+-Mac dinh icon la 16px
+*/
+
+/*Common*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.text-white {
+    color: #fff !important;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+.clear {
+    clear: both;
+}
+.align-center {
+    text-align: center;
+}
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.col {
+    float: left;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.col-half {
+    width: 50%;
+}
+.col-full {
+    width: 100%;
+}
+.col-third {
+    width: 33,33333%;
+}
+.mt-8 {
+    margin-top: 8px;
+}
+.mt-16 {
+    margin-top: 16px;
+}
+
+/* Cac buoc lam bai:
+1.Vi tri 
+2.Kich thuoc (width, height)
+3.Mau sac
+4.Kieu dang (hinh vuong, tron, kieu chu,...)
+*/
+
+/* main */
+#main {
+
+}
+
+#Header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#nav {
+/* lam mat tinh ke thua block o #nav */ 
+    display: inline-block;
+}
+#nav>li {
+    display: inline-block;
+}
+#nav li {
+    position: relative;
+}
+#nav .subnav li:hover,
+#nav>li:hover {
+    color: #000;
+    background-color: #ccc;   
+}
+#nav li a {
+    font-size: 15px;
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 24px;
+    line-height: 46px;
+}
+#nav>li>a {
+    text-transform: uppercase;
+    /* lay vao the con truc tiep */
+    color: #fff;
+}
+#nav .subnav li {
+    color: #000;
+    display: block;
+    /* width: 100%; */
+}
+#nav .subnav a {
+    color: #000;
+    padding: 0px 12px;
+}
+#nav .subnav {
+    /* an the con */
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px #333;
+    min-width: 160px;   
+}
+#nav, .subnav {
+    list-style-type: none;
+}
+#nav li:hover .subnav {
+    display: block;
+}
+#nav .arrow-icon {
+    font-size: 13px;
+}
+#Header .search-btn {
+    float: right;
+    cursor: pointer;
+}
+#Header .search-btn:hover {
+    background-color: #f44336;
+}
+#Header .search-icon {
+    color: #fff;   
+    font-size: 17px;
+    line-height: 46px;
+    padding: 0px 24px;
+}
+/* Menu buttom */
+#Header .menu-btn:hover,
+#Header .search-btn:hover {
+    background-color: #ccc;
+}
+#Header .menu-btn,
+#Header .search-icon {
+    color: #fff;   
+    font-size: 15px;
+    line-height: 46px;
+    padding: 0px 24px;
+}
+#Header .menu-btn:hover .menu-icon {
+    color: #000;
+}
+
+#Header .menu-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#Slider {
+    display: block;
+    margin-top: 46px;
+    /* lay 50% width cua anh */
+    padding-top: 50%;
+    background: url('https://www.w3schools.com/w3images/la.jpg') top center / cover no-repeat;
+    position: relative;
+}
+#Slider .text-content {
+    position: absolute;
+    color: #fff;
+    bottom: 32px;
+    text-align: center;
+    /* left: 50%; 
+    transform: translateX(-50%); */
+    right: 0;
+    left: 0;
+}
+#Slider .los-angeles {
+    font-size: 30px;
+    font-weight: 300;
+}
+#Slider .text-description {
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+#Content {
+ 
+}
+/* abour section */
+#Content .about-section {
+    padding: 64px 16px;
+    max-width: 830px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#Content .content-slogan,
+#Content .content-header {
+    text-align: center;
+}
+#Content .content-header {
+    margin: 10px 0px;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 4px;
+    
+}
+#Content .content-slogan {
+    margin-top: 15px;
+    font-size: 15px;
+    opacity: 0.6;
+    font-style: italic;
+
+}
+#Content .content-about {
+    text-align: justify;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 15px 0px;
+}
+/* member-list */
+#Content .member-list {
+    padding: 32px 0px;
+    overflow: hidden;
+}
+#Content .member-items {
+    text-align: center;
+    float: left;      
+    width: 256px;
+}
+#Content .member-name {
+    margin: 15px 0px;
+    font-size: 15px;
+}
+#Content .member-img {
+    width: 154px;
+    border-radius: 4px;
+}
+/* tour section */
+.tour-section {
+    background-color: #000;
+    width: 100%;
+    min-height: 790px;
+
+}
+.book-tickets {
+    background-color: #fff;    
+    margin-top: 24px;
+    list-style-type: none;
+
+}
+.book-tickets li {
+    font-size: 15px;    
+    border-bottom: 2px solid #ddd;
+    padding: 8px 16px;
+    color: #757575;
+}
+.book-tickets .sold-out {
+    background-color: #f44336;
+    padding: 2px 8px;
+    margin-left: 16px;
+    color: #fff;
+}
+.book-tickets .quatity {
+    background-color: #000;
+    float: right;
+    border-radius: 50%;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: -4px;
+}
+/* Places-section */
+.places-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    margin-right: 8px; 
+}
+
+.places-item {
+    padding: 0 8px;  
+    width: 271px;
+}
+.place-img {
+    display: block; 
+    width: 100%;
+}
+.place-img:hover {
+    opacity: 0.6;
+}
+.place-sub {
+    background-color: #fff;
+    color: #000;
+    font-size: 15px;
+    padding: 0px 16px;
+    display: inline-block;
+    padding-bottom: 20px;
+    width: 100%;
+}
+.place-heading {
+    margin: 15px 0px;
+    font-weight: 550;
+}
+.place-calendar {
+    margin: 15px 0px;
+    opacity: 0.6;
+}
+.place-content {
+    margin: 15px 0px;
+}
+.place-buy {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+.place-buy:hover {
+    background-color: #ccc;
+}
+/* end-place */
+
+/* modal */
+.modal {
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.4);
+    display: none;
+}
+.modal-container {
+    background: #fff;
+    width: 900px;
+    min-height: 200px;
+    position: relative;
+    /* luu y */
+    max-width: calc(100% - 32px);
+    animation: ModalFaceIN ease .5s;
+}
+.modal-heading {
+    background: #009688;
+    color: #fff;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+.bag-head {
+    margin-right: 16px;
+}
+.modal-close {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px 16px;
+    font-size: 12px;
+    cursor: pointer;
+}
+.modal-close:hover {
+    background-color: #ccc;
+    color: #000
+}
+.modal-body {
+    padding: 16px;
+    font-size: 15px;
+}
+.modal-label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.modal-input {
+    margin-bottom: 24px;
+    width: 100%;
+    padding: 10px;
+    border: #ccc solid 1px;
+}
+#modal-buttom {
+    background: #009688;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 16px;    
+    font-size: 15px;
+    cursor: pointer;
+}
+#modal-buttom:hover {
+    opacity: 0.8;    
+}
+.need-help {
+    margin: 16px;
+    float: right;    
+    font-size: 15px;
+
+}
+.need-help a {
+    color: #2196F3;    
+    cursor: pointer;
+}
+/* js-modal */
+    @keyframes modalFaceIn {
+        from {
+            opacity: 0;
+            transform: translateY(-100px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+/* Contact */
+.contact-content {
+    margin-top: 48px;
+}
+.contact-info {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.contact-section {
+
+}
+.contact-info .contact-icon {
+    margin-right: 16px;
+}
+.contact-section .contact-control {
+    font-size: 15px;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+.contact-section .contact-mess {
+    margin-top: 8px;
+}
+.contact-submit {
+    float: right;
+    font-size: 15px;
+    padding: 8px 16px;
+    margin: 16px 0;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+.contact-submit:hover {
+    background-color: #ccc;
+    color: #000;
+    border: none;
+}
+a.contact-decoration {
+    opacity: 0.8;
+}
+a.contact-decoration:hover {
+    opacity: 1;
+}
+
+/* map section */
+.map-section img {
+    width: 100%;
+    margin-top: 100px
+}
+/* end map */
+
+/* footer */
+#Footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+#Footer .socials-media {
+    font-size: 24px;    
+    letter-spacing: -2px;
+}
+#Footer .socials-media a {
+    color: rgba(0, 0, 0, 0.6);    
+    text-decoration: none;
+}
+#Footer .socials-media a:hover {
+    color: rgba(0, 0, 0, 0.3)
+}
+#Footer .footer-content {
+    margin: 15px 0;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.6); 
+}
+#Footer .footer-content a {
+    color: rgba(0, 0, 0, 0.6); 
+}
